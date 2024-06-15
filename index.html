@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AFI TODO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <script src="./js/tailwind.js"></script>
+    <script src="./js/index.js" defer></script>
+  </head>
+  <body class="bg-accent">
+    <main class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <header class="flex justify-between items-center py-6">
+        <h1 class="text-3xl font-bold text-white">AFI TODO</h1>
+        <button
+          class="bg-primary text-black px-4 h-[32px] w-full max-w-[185px] active:bg-primary/90"
+          onclick="showModal()"
+        >
+          Create New Task
+        </button>
+      </header>
+      <section class="flex flex-col gap-4">
+        <h2 class="text-white">Recent Tasks</h2>
+        <ul id="task-list" class="flex flex-col gap-4"></ul>
+      </section>
+      <!-- Create New Task Modal -->
+      <div
+        class="hidden relative z-10"
+        aria-labelledby="modal-title"
+        role="dialog"
+        aria-modal="true"
+        id="modal"
+      >
+        <div
+          id="backdrop"
+          class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity hidden ease-in duration-200 opacity-0"
+        ></div>
+
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div
+            id="modal-panel-container"
+            class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+          >
+            <div
+              id="modal-panel"
+              class="w-full relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6 hidden ease-in duration-200 opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            >
+              <form id="modal-form">
+                <div>
+                  <div class="mt-3 text-center sm:mt-5">
+                    <h3
+                      class="text-xl font-semibold leading-6 text-gray-900"
+                      id="modal-title"
+                    >
+                      Create New Task
+                    </h3>
+                    <!-- Task Name Input -->
+                    <div class="mt-2 text-left">
+                      <label
+                        for="task-name"
+                        class="block text-sm font-medium leading-6 text-gray-900"
+                        >Task Name</label
+                      >
+                      <div class="mt-2">
+                        <input
+                          type="text"
+                          name="task-name"
+                          id="task-name"
+                          class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                          placeholder="Task Name..."
+                        />
+                      </div>
+                    </div>
+                    <!-- Task Description Input -->
+                    <div class="mt-2 text-left">
+                      <label
+                        for="task-description"
+                        class="block text-sm font-medium leading-6 text-gray-900"
+                        >Task Description</label
+                      >
+                      <div class="mt-2">
+                        <textarea
+                          rows="4"
+                          name="task-description"
+                          id="task-description"
+                          placeholder="Task Description..."
+                          class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        ></textarea>
+                      </div>
+                    </div>
+                    <!-- Task Due Date Input -->
+                    <div class="mt-2 text-left">
+                      <label
+                        for="task-due-date"
+                        class="block text-sm font-medium leading-6 text-gray-900"
+                        >Task Due Date</label
+                      >
+                      <div class="mt-2">
+                        <input type="date" name="task-due-date""
+                        id="task-due-date" class="block w-full rounded-md
+                        border-0 py-1.5 text-gray-900 shadow-sm ring-1
+                        ring-inset ring-gray-300 placeholder:text-gray-400
+                        focus:ring-2 focus:ring-inset focus:ring-indigo-600
+                        sm:text-sm sm:leading-6" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-5 sm:mt-6">
+                  <button
+                    type="submit"
+                    class="inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-black hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                  >
+                    Create Task
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
