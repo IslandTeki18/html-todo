@@ -9,6 +9,7 @@ This is a simple Todo application built using HTML, Tailwind CSS, and JavaScript
 - **Edit Task:** Users can edit the details of any task.
 - **List Page:** Displays all tasks with options to edit or delete each task.
 - **Details Page:** Shows detailed information about each task.
+- **Data Persistence:** Using localStorage to store tasks
 
 ## Design
 
@@ -38,13 +39,8 @@ Using a live server extension ensures that the application runs correctly with r
 
 ## Future Improvements
 
-- Implement data persistence using localStorage or a backend database.
 - Enhance UX/UI with more polished design elements.
 - Add filtering or sorting options for tasks.
-
-## Contributing
-
-Contributions are welcome! Feel free to fork this repository and submit pull requests to suggest improvements or add new features.
 
 ## License
 
