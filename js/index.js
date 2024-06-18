@@ -131,7 +131,7 @@ function showDropdown(index) {
 }
 
 function goToDetails(index) {
-  window.location.href = `/details.html?id=${index}`;
+  window.location.href = `/html-todo/details.html?id=${index}`;
 }
 
 // Function to render tasks
